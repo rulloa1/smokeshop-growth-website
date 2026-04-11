@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Smokeshop Growth</title>
+  <meta name="description" content="Browse all web design projects built by Smokeshop Growth — including smoke shops, construction, landscaping, handyman, and consulting firm websites." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./site.css" />
+  <link rel="stylesheet" href="./portfolio.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a href="./index.html" class="nav-logo" id="nav-logo">
+        <div class="logo-dot"></div>
+        Smokeshop Growth
+      </a>
+      <ul class="nav-links">
+        <li><a href="./index.html" id="nav-home">Home</a></li>
+        <li><a href="./portfolio.html" class="active" id="nav-portfolio">Portfolio</a></li>
+      </ul>
+      <a href="./index.html#contact" class="nav-cta" id="nav-contact-cta">Get a Free Demo ↗</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="port-hero">
+    <div class="hero-bg"></div>
+    <div class="container port-hero-inner">
+      <div class="reveal" id="port-hero-badge">
+        <span class="eyebrow">Our Work</span>
+      </div>
+      <h1 class="reveal" id="port-hero-h1">
+        Every Site,<br />
+        <span class="grad-text">Built to Perform.</span>
+      </h1>
+      <p class="port-hero-sub reveal" id="port-hero-sub">
+        From smoke shops to construction firms — each project is custom-designed,
+        mobile-first, and built to convert visitors into customers.
+      </p>
+
+      <!-- Filters -->
+      <div class="port-filters reveal" id="port-filters">
+        <button class="filter-btn active" data-filter="all" id="filter-all">All Projects</button>
+        <button class="filter-btn" data-filter="live" id="filter-live">🟢 Live Sites</button>
+        <button class="filter-btn" data-filter="construction" id="filter-construction">Construction</button>
+        <button class="filter-btn" data-filter="landscaping" id="filter-landscaping">Landscaping</button>
+        <button class="filter-btn" data-filter="services" id="filter-services">Services</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO GRID -->
+  <section class="port-grid-section">
+    <div class="container">
+      <div class="port-grid" id="port-grid">
+
+        <!-- 1. Michael Chandler — LIVE -->
+        <article class="port-card glass reveal" data-category="services live" id="card-mcdesign">
+          <div class="port-card-img-wrap">
+            <div class="port-img port-img--mcdesign"></div>
+            <div class="port-img-overlay">
+              <a href="https://www.mcdesign.bio" target="_blank" rel="noreferrer" class="port-view-btn" id="link-mcdesign">↗ Visit Site</a>
+            </div>
+            <span class="port-live-badge">🟢 Live</span>
+          </div>
+          <div class="port-card-body">
+            <div class="port-card-meta">
+              <span class="port-tag">Design Consulting</span>
+              <span class="port-mono">mcdesign.bio</span>
+            </div>
+            <h2>Michael Chandler</h2>
+            <p>A premium, scroll-driven portfolio site for a high-end design consultant. Features cinematic animations, GSAP scroll triggers, glassmorphism cards, and a "Discovery Call" conversion strategy targeting luxury clients.</p>
+            <div class="port-tags">
+              <span class="port-tech-tag">Custom HTML/CSS</span>
+              <span class="port-tech-tag">GSAP</span>
+              <span class="port-tech-tag">Tailwind</span>
+              <span class="port-tech-tag">Scroll Animation</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Flava Depot — LIVE -->
+        <article class="port-card glass reveal" data-category="services live" id="card-flava">
+          <div class="port-card-img-wrap">
+            <div class="port-img port-img--flava"></div>
+            <div class="port-img-overlay">
+              <a href="https://flava-depot.pages.dev/" target="_blank" rel="noreferrer" class="port-view-btn" id="link-flava">↗ Visit Site</a>
+            </div>
+            <span class="port-live-badge">🟢 Live</span>
+          </div>
+          <div class="port-card-body">
+            <div class="port-card-meta">
+              <span class="port-tag">Smoke Shop</span>
+              <span class="port-mono">flava-depot.com</span>
+            </div>
+            <h2>Flava Depot</h2>
+            <p>A premium dark-mode site for a high-end cannabis and smoke shop. Features an onyx-and-gold aesthetic, dynamic product showcases, custom typography, and a modern design built to attract retail walk-ins.</p>
+            <div class="port-tags">
+              <span class="port-tech-tag">Premium Design</span>
+              <span class="port-tech-tag">Dark Mode</span>
+              <span class="port-tech-tag">Local SEO</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. Affordable Handyman Austin -->
+        <article class="port-card glass reveal" data-category="services" id="card-handyman">
+          <div class="port-card-img-wrap">
+            <div class="port-img port-img--handyman"></div>
+            <div class="port-img-overlay">
+              <span class="port-view-btn port-view-demo">Demo Built</span>
+            </div>
+          </div>
+          <div class="port-card-body">
+            <div class="port-card-meta">
+              <span class="port-tag">Handyman Services</span>
+              <span class="port-mono">Demo Site</span>
+            </div>
+            <h2>Affordable Handyman of Austin</h2>
+            <p>A high-end dark-mode landing page for a local Austin handyman service. Bold amber accents, trust signals, service grid, and a prominent call CTA designed to drive direct phone calls from local searchers.</p>
+            <div class="port-tags">
+              <span class="port-tech-tag">Dark Mode</span>
+              <span class="port-tech-tag">Local SEO</span>
+              <span class="port-tech-tag">Lead Gen</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. Regalia Construction -->
+        <article class="port-card glass reveal" data-category="construction" id="card-regalia">
+          <div class="port-card-img-wrap">
+            <div class="port-img port-img--regalia"></div>
+            <div class="port-img-overlay">
+              <span class="port-view-btn port-view-demo">Demo Built</span>
+            </div>
+          </div>
+          <div class="port-card-body">
+            <div class="port-card-meta">
+              <span class="port-tag">Construction</span>
+              <span class="port-mono">Demo Site</span>
+            </div>
+            <h2>Regalia Construction</h2>
+            <p>A luxury construction company landing page with an onyx-and-gold aesthetic. Cinematic project showcase, glassmorphism cards, and premium feel engineered to attract high-budget residential and commercial contracts.</p>
+            <div class="port-tags">
+              <span class="port-tech-tag">Luxury Aesthetic</span>
+              <span class="port-tech-tag">Dark Mode</span>
+              <span class="port-tech-tag">Portfolio Grid</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. Sunscape Landscaping -->
+        <article class="port-card glass reveal" data-category="landscaping" id="card-sunscape">
+          <div class="port-card-img-wrap">
+            <div class="port-img port-img--sunscape"></div>
+            <div class="port-img-overlay">
+              <span class="port-view-btn port-view-demo">Demo Built</span>
+            </div>
+          </div>
+          <div class="port-card-body">
+            <div class="port-card-meta">
+              <span class="port-tag">Landscaping</span>
+              <span class="port-mono">Demo Site</span>
+            </div>
+            <h2>Sunscape Landscaping</h2>
+            <p>A bright, modern landscaping website with deep forest green branding, service cards for lawn care and garden design, quote request form, and Google Maps integration for local search visibility.</p>
+            <div class="port-tags">
+              <span class="port-tech-tag">Light Mode</span>
+              <span class="port-tech-tag">Services Grid</span>
+              <span class="port-tech-tag">Google Maps</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. Ecosystems Landscaping -->
+        <article class="port-card glass reveal" data-category="landscaping" id="card-ecosystems">
+          <div class="port-card-img-wrap">
+            <div class="port-img port-img--ecosystems"></div>
+            <div class="port-img-overlay">
+              <span class="port-view-btn port-view-demo">Demo Built</span>
+            </div>
+          </div>
+          <div class="port-card-body">
+            <div class="port-card-meta">
+              <span class="port-tag">Eco Landscaping</span>
+              <span class="port-mono">Demo Site</span>
+            </div>
+            <h2>Ecosystems Landscaping</h2>
+            <p>A dark, nature-inspired site for an eco-forward landscaping firm. Deep green tones with organic design language, sustainability-focused messaging, and glassmorphism service cards with scroll-triggered reveals.</p>
+            <div class="port-tags">
+              <span class="port-tech-tag">Eco Brand</span>
+              <span class="port-tech-tag">Dark Green</span>
+              <span class="port-tech-tag">Scroll Reveals</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 7. TJ Wendel Associates -->
+        <article class="port-card glass reveal" data-category="services" id="card-tj-wendel">
+          <div class="port-card-img-wrap">
+            <div class="port-img port-img--tjwendel"></div>
+            <div class="port-img-overlay">
+              <span class="port-view-btn port-view-demo">Demo Built</span>
+            </div>
+          </div>
+          <div class="port-card-body">
+            <div class="port-card-meta">
+              <span class="port-tag">Consulting</span>
+              <span class="port-mono">Demo Site</span>
+            </div>
+            <h2>TJ Wendel Associates</h2>
+            <p>A corporate-grade consulting firm site with a deep slate-and-blue palette. Clean grid layout, service breakdown cards, professional trust signals, and a focused CTA funnel designed for B2B lead generation.</p>
+            <div class="port-tags">
+              <span class="port-tech-tag">B2B Design</span>
+              <span class="port-tech-tag">Corporate</span>
+              <span class="port-tech-tag">Lead Funnel</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 8. Urban Dirt -->
+        <article class="port-card glass reveal" data-category="landscaping construction" id="card-urban-dirt">
+          <div class="port-card-img-wrap">
+            <div class="port-img port-img--urbandirt"></div>
+            <div class="port-img-overlay">
+              <span class="port-view-btn port-view-demo">Demo Built</span>
+            </div>
+          </div>
+          <div class="port-card-body">
+            <div class="port-card-meta">
+              <span class="port-tag">Hardscaping</span>
+              <span class="port-mono">Demo Site</span>
+            </div>
+            <h2>Urban Dirt</h2>
+            <p>A bold, industrial-modern hardscaping site with a concrete-and-orange aesthetic. Chunky typography, edgy grid layout, and a call-first CTA strategy targeting homeowners wanting patios, driveways, and outdoor structures.</p>
+            <div class="port-tags">
+              <span class="port-tech-tag">Industrial Design</span>
+              <span class="port-tech-tag">Bold Typography</span>
+              <span class="port-tech-tag">CTA Focused</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <section class="port-cta-strip">
+    <div class="container">
+      <div class="port-cta-card glass reveal" id="port-cta-card">
+        <div>
+          <p class="eyebrow">Next Up: Your Smoke Shop</p>
+          <h2>Want a Site Like These?</h2>
+          <p>We'll build a free custom demo for your shop — no commitment, no payment, just results.</p>
+        </div>
+        <div class="cta-strip-btns">
+          <a href="./index.html#contact" class="btn btn-primary" id="port-get-demo-btn">Get My Free Demo →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-copy">© 2025 Smokeshop Growth. Built for the smoke shop industry.</p>
+      <ul class="footer-links">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./portfolio.html">Portfolio</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="./portfolio.js"></script>
+</body>
+</html>

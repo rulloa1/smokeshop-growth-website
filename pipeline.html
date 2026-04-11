@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pipeline CRM — Smokeshop Growth</title>
+  <meta name="description" content="AI-powered outreach pipeline for smoke shop lead generation. Track leads, log calls, get coaching, and keep your outreach moving." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./site.css" />
+  <link rel="stylesheet" href="./pipeline.css" />
+</head>
+<body class="pipeline-body">
+
+  <!-- NAV -->
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a href="./index.html" class="nav-logo" id="nav-logo">
+        <div class="logo-dot"></div>
+        Smokeshop Growth
+      </a>
+      <ul class="nav-links">
+        <li><a href="./index.html" id="nav-home">Home</a></li>
+        <li><a href="./portfolio.html" id="nav-portfolio">Portfolio</a></li>
+      </ul>
+      <a href="./index.html#contact" class="nav-cta" id="nav-contact-cta">Get a Free Demo ↗</a>
+    </div>
+  </nav>
+
+  <div class="pipeline-shell">
+
+    <!-- HEADER / STATS -->
+    <header class="pipeline-header glass">
+      <div class="pipeline-header-text">
+        <p class="eyebrow">Outbound Demo Tracker</p>
+        <h1 id="pipeline-title">Smokeshop Growth Pipeline</h1>
+        <p class="pipeline-sub" id="ops-agent-status">Track leads, call outcomes, and demo links in one focused workspace.</p>
+      </div>
+      <div class="hero-stats" id="hero-stats"></div>
+    </header>
+
+    <main class="pipeline-layout">
+
+      <!-- ADD LEAD -->
+      <section class="p-panel p-panel-form glass" id="panel-add-lead">
+        <div class="p-panel-heading">
+          <div>
+            <p class="eyebrow">New Lead</p>
+            <h2>Add Lead</h2>
+          </div>
+          <p class="p-panel-desc">Capture a shop before you call.</p>
+        </div>
+        <form id="lead-form" class="lead-form">
+          <label>
+            Shop name
+            <input name="name" type="text" placeholder="Cloud 9 Smoke Shop" required />
+          </label>
+          <label>
+            Contact name
+            <input name="contact" type="text" placeholder="Owner or manager" />
+          </label>
+          <label>
+            Phone
+            <input name="phone" type="tel" placeholder="(555) 555-5555" required />
+          </label>
+          <label>
+            City
+            <input name="city" type="text" placeholder="Dallas, TX" />
+          </label>
+          <label class="full-col">
+            Demo link
+            <input name="demoUrl" type="url" placeholder="https://demo.smokeshopgrowth.com/shopname" />
+          </label>
+          <label>
+            Status
+            <select name="status">
+              <option value="new">New</option>
+              <option value="ready-to-call">Ready to Call</option>
+              <option value="interested">Interested</option>
+              <option value="callback">Callback</option>
+              <option value="not-interested">Not Interested</option>
+            </select>
+          </label>
+          <label class="full-col">
+            Notes
+            <textarea name="notes" rows="4" placeholder="E.g. Strong reviews, mentioned wanting online pickup."></textarea>
+          </label>
+          <button type="submit" class="btn btn-primary full-col" id="save-lead-btn">Save Lead</button>
+        </form>
+      </section>
+
+      <!-- CALL SCRIPT -->
+      <section class="p-panel p-panel-script glass" id="panel-script">
+        <div class="p-panel-heading">
+          <div>
+            <p class="eyebrow">Pitch</p>
+            <h2>Call Script</h2>
+          </div>
+          <p class="p-panel-desc">A tight opener you can use on the phone.</p>
+        </div>
+        <div class="script-card">
+          <p>"Hey, is this the owner or manager? My name is Roy. I build modern websites for local smoke shops and I put together a quick demo concept for your store — because I think you could look way stronger online. Would you be open to seeing it?"</p>
+          <p>If yes: "Perfect. I can text or email the link and walk you through it in under 5 minutes. What's the best place to send it?"</p>
+          <p>If hesitant: "Totally understand — this isn't a commitment. I just made a rough example so you can see what your shop could look like online."</p>
+        </div>
+        <div class="objections-card">
+          <h3>Quick Objections</h3>
+          <ul>
+            <li><strong>"We already have a site."</strong> — "Makes sense. This is more about showing a stronger, conversion-focused version."</li>
+            <li><strong>"We're busy."</strong> — "Understood. I can text the demo and you can glance whenever you get a minute."</li>
+            <li><strong>"Not interested."</strong> — "No worries at all. If that changes later, I'd be happy to share it."</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- AI ASSIST -->
+      <section class="p-panel p-panel-ai glass" id="panel-ai">
+        <div class="p-panel-heading">
+          <div>
+            <p class="eyebrow">Coaching</p>
+            <h2>AI Assist</h2>
+          </div>
+          <p class="p-panel-desc">Personalized opener for the next lead you call.</p>
+        </div>
+        <div id="ai-assistant" class="assistant-card">
+          <div class="assistant-empty">Select "Coach Me" on any lead to get a tailored opener, angle, and follow-up plan.</div>
+        </div>
+      </section>
+
+      <!-- GUARDIAN -->
+      <section class="p-panel p-panel-guardian glass" id="panel-guardian">
+        <div class="p-panel-heading">
+          <div>
+            <p class="eyebrow">Automation</p>
+            <h2>Pipeline Guardian</h2>
+          </div>
+          <p class="p-panel-desc">Monitors flow issues and applies safe fixes to keep outreach moving.</p>
+        </div>
+        <div id="guardian-panel" class="guardian-card">
+          <div class="assistant-empty">The guardian scans for blocked leads, weak records, and stale follow-ups.</div>
+        </div>
+      </section>
+
+      <!-- FILTERS -->
+      <section class="p-panel p-panel-filters glass" id="panel-filters">
+        <div class="p-panel-heading">
+          <div>
+            <p class="eyebrow">Search</p>
+            <h2>Pipeline</h2>
+          </div>
+          <p class="p-panel-desc">Search, filter, and prioritize your outreach list.</p>
+        </div>
+        <div class="p-toolbar">
+          <label class="search-label">
+            <span>Search</span>
+            <input id="search-input" type="search" placeholder="Shop, city, phone, notes…" />
+          </label>
+          <label>
+            <span>Status</span>
+            <select id="status-filter">
+              <option value="all">All statuses</option>
+              <option value="new">New</option>
+              <option value="ready-to-call">Ready to Call</option>
+              <option value="interested">Interested</option>
+              <option value="callback">Callback</option>
+              <option value="not-interested">Not Interested</option>
+            </select>
+          </label>
+          <label>
+            <span>Sort</span>
+            <select id="sort-order">
+              <option value="score">Highest score first</option>
+              <option value="newest">Newest first</option>
+              <option value="oldest">Oldest first</option>
+              <option value="name">Name A-Z</option>
+            </select>
+          </label>
+          <button id="seed-demo-data" class="btn btn-outline" type="button" id="load-samples-btn">Load Sample Leads</button>
+        </div>
+      </section>
+
+      <!-- LEAD BOARD -->
+      <section class="p-panel p-panel-table glass" id="panel-board">
+        <div class="p-panel-heading">
+          <div>
+            <p class="eyebrow">Leads</p>
+            <h2>Lead Board</h2>
+          </div>
+          <p class="p-panel-desc">Each lead is stored in your browser with call history and next-step details.</p>
+        </div>
+        <div id="empty-state" class="empty-state" hidden>
+          No leads yet. Add your first smoke shop or load sample leads to test the workflow.
+        </div>
+        <div id="lead-list" class="lead-list"></div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Lead card template -->
+  <template id="lead-card-template">
+    <article class="lead-card glass">
+      <div class="lead-main">
+        <div>
+          <div class="lead-title-row">
+            <h3 class="lead-name"></h3>
+            <span class="status-pill"></span>
+            <span class="score-pill"></span>
+          </div>
+          <p class="lead-meta"></p>
+        </div>
+        <div class="lead-actions">
+          <button class="btn btn-outline btn-sm lead-coach" type="button">Coach Me</button>
+          <button class="btn btn-ghost-danger btn-sm lead-delete" type="button">Delete</button>
+        </div>
+      </div>
+      <div class="lead-grid">
+        <div>
+          <p class="p-label">Contact</p>
+          <p class="lead-contact"></p>
+        </div>
+        <div>
+          <p class="p-label">Phone</p>
+          <p class="lead-phone"></p>
+        </div>
+        <div>
+          <p class="p-label">Demo</p>
+          <p class="lead-demo"></p>
+        </div>
+        <div>
+          <p class="p-label">Created</p>
+          <p class="lead-created"></p>
+        </div>
+      </div>
+      <label>
+        Update status
+        <select class="lead-status-select">
+          <option value="new">New</option>
+          <option value="ready-to-call">Ready to Call</option>
+          <option value="interested">Interested</option>
+          <option value="callback">Callback</option>
+          <option value="not-interested">Not Interested</option>
+        </select>
+      </label>
+      <label>
+        Call note
+        <textarea class="lead-log-input" rows="3" placeholder="What happened on the latest call?"></textarea>
+      </label>
+      <button class="btn btn-primary btn-sm lead-log-save" type="button">Save Call Update</button>
+      <div class="notes-block">
+        <p class="p-label">Notes</p>
+        <p class="lead-notes"></p>
+      </div>
+      <div class="score-block">
+        <p class="p-label">Score Drivers</p>
+        <ul class="lead-score-reasons"></ul>
+      </div>
+      <div class="repair-block">
+        <p class="p-label">Guardian Recommendations</p>
+        <ul class="lead-repair-list"></ul>
+      </div>
+      <div class="history-block">
+        <p class="p-label">Call History</p>
+        <ul class="lead-history"></ul>
+      </div>
+    </article>
+  </template>
+
+  <script src="./pipeline.js"></script>
+</body>
+</html>
