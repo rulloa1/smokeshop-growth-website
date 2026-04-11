@@ -77,7 +77,7 @@
 .proof-label {
   font-size: 0.78rem;
   color: var(--text-3);
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
@@ -205,7 +205,7 @@
 }
 
 .service-num {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.72rem;
   color: var(--text-3);
   letter-spacing: 0.1em;
@@ -287,7 +287,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.82rem;
   font-weight: 700;
   color: var(--green);
@@ -386,7 +386,7 @@
 
 .feat-tag {
   display: inline-block;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.7rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -501,7 +501,7 @@
   font-weight: 600;
   color: var(--text-2);
   margin-bottom: 1.25rem;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
 }
 
 .mini-dot {
@@ -543,7 +543,7 @@
   border-radius: 999px;
   font-size: 0.7rem;
   font-weight: 700;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
 }
 
 .mini-tag.ready   { background: var(--green-dim); color: var(--green); }
@@ -551,7 +551,7 @@
 .mini-tag.interested { background: rgba(139,92,246,0.15); color: #a78bfa; }
 
 .mini-score {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.75rem;
   color: var(--text-3);
 }
@@ -594,7 +594,7 @@
 
 .contact-form input,
 .contact-form textarea {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 0.93rem;
   width: 100%;
   padding: 0.85rem 1rem;
@@ -652,4 +652,211 @@
   .form-row { grid-template-columns: 1fr; }
   .teaser-card { padding: 2rem; }
   .contact-card { padding: 2rem; }
+}
+
+/* ── PRICING ──────────────────────────────────────────────── */
+.pricing-section {
+  padding: 6rem 0;
+  background: linear-gradient(180deg, transparent, rgba(245,158,11,0.03), transparent);
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.pricing-card {
+  padding: 2.25rem;
+  border-radius: var(--radius);
+  position: relative;
+  transition: transform 0.3s, border-color 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.pricing-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(34,197,94,0.25);
+}
+
+.pricing-featured {
+  border-color: rgba(34,197,94,0.35);
+  background: rgba(34,197,94,0.04);
+  box-shadow: 0 0 0 1px rgba(34,197,94,0.12), var(--shadow-sm);
+}
+
+.pricing-badge {
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--green);
+  color: #030f06;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.35rem 1rem;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  white-space: nowrap;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.pricing-tier {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.pricing-price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.price-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.03em;
+}
+
+.price-once, .price-mo {
+  font-size: 0.85rem;
+  color: var(--text-3);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.pricing-desc {
+  font-size: 0.9rem;
+  color: var(--text-2);
+  line-height: 1.6;
+}
+
+.pricing-list {
+  list-style: none;
+  display: grid;
+  gap: 0.55rem;
+  flex: 1;
+}
+
+.pricing-list li {
+  font-size: 0.88rem;
+  color: var(--text-2);
+  padding-left: 1.4rem;
+  position: relative;
+}
+
+.pricing-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--green);
+  font-weight: 700;
+}
+
+.pricing-btn {
+  width: 100%;
+  margin-top: auto;
+}
+
+.pricing-note {
+  text-align: center;
+  margin-top: 2.5rem;
+  font-size: 0.9rem;
+  color: var(--text-2);
+}
+
+.pricing-note strong { color: var(--green); }
+
+/* ── TESTIMONIALS ─────────────────────────────────────────── */
+.testimonials-section {
+  padding: 6rem 0;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.testimonial-card {
+  padding: 2rem;
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--line-strong);
+}
+
+.testi-stars {
+  color: var(--amber);
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+}
+
+.testi-quote {
+  font-size: 0.95rem;
+  color: var(--text-2);
+  line-height: 1.75;
+  flex: 1;
+  font-style: italic;
+}
+
+.testi-quote::before { content: '"'; }
+.testi-quote::after  { content: '"'; }
+
+.testi-author {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--line);
+}
+
+.testi-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  color: #fff;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.testi-author strong {
+  display: block;
+  font-size: 0.88rem;
+  margin-bottom: 0.2rem;
+}
+
+.testi-author span {
+  font-size: 0.78rem;
+  color: var(--text-3);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* ── RESPONSIVE additions ─────────────────────────────────── */
+@media (max-width: 1024px) {
+  .pricing-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .pricing-grid { max-width: 100%; }
 }

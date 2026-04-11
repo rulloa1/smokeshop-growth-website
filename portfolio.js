@@ -1,20 +1,21 @@
-// Filter logic
+// ── Filter logic ─────────────────────────────────────────────
 const filterBtns = document.querySelectorAll('.filter-btn');
-const cards = document.querySelectorAll('.port-card');
+const cards      = document.querySelectorAll('.port-card');
 
 filterBtns.forEach((btn) => {
   btn.addEventListener('click', () => {
     const filter = btn.dataset.filter;
 
-    // Update active button
     filterBtns.forEach((b) => b.classList.remove('active'));
     btn.classList.add('active');
 
-    // Show/hide cards
     cards.forEach((card) => {
       const categories = card.dataset.category || '';
       if (filter === 'all' || categories.includes(filter)) {
         card.classList.remove('hidden');
+        card.style.animation = 'none';
+        card.offsetHeight; // reflow
+        card.style.animation = '';
       } else {
         card.classList.add('hidden');
       }
@@ -22,17 +23,42 @@ filterBtns.forEach((btn) => {
   });
 });
 
-// Scroll reveal
-const reveals = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver(
+// ── Scroll reveal ─────────────────────────────────────────────
+const portReveals = document.querySelectorAll('.reveal');
+const portObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry, i) => {
       if (entry.isIntersecting) {
         setTimeout(() => entry.target.classList.add('visible'), i * 70);
-        observer.unobserve(entry.target);
+        portObserver.unobserve(entry.target);
       }
     });
   },
   { threshold: 0.08 }
 );
-reveals.forEach((el) => observer.observe(el));
+portReveals.forEach((el) => portObserver.observe(el));
+
+// ── Mobile nav hamburger ─────────────────────────────────────
+const hamburger = document.getElementById('nav-hamburger');
+const overlay   = document.getElementById('mobile-nav-overlay');
+const drawer    = document.getElementById('mobile-nav-drawer');
+
+function openNav() {
+  hamburger.classList.add('open');
+  overlay.classList.add('open');
+  drawer.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeNav() {
+  hamburger.classList.remove('open');
+  overlay.classList.remove('open');
+  drawer.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+hamburger?.addEventListener('click', () => {
+  hamburger.classList.contains('open') ? closeNav() : openNav();
+});
+overlay?.addEventListener('click', closeNav);
+drawer?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));

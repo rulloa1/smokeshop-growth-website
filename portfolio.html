@@ -7,7 +7,7 @@
   <meta name="description" content="Browse all web design projects built by Smokeshop Growth — including smoke shops, construction, landscaping, handyman, and consulting firm websites." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./site.css" />
   <link rel="stylesheet" href="./portfolio.css" />
 </head>
@@ -25,8 +25,20 @@
         <li><a href="./portfolio.html" class="active" id="nav-portfolio">Portfolio</a></li>
       </ul>
       <a href="./index.html#contact" class="nav-cta" id="nav-contact-cta">Get a Free Demo ↗</a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
+
+  <!-- Mobile Nav Drawer -->
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <ul>
+      <li><a href="./index.html" id="mn-home">Home</a></li>
+      <li><a href="./portfolio.html" id="mn-portfolio">Portfolio</a></li>
+      <li><a href="./index.html#contact" id="mn-contact" class="btn btn-primary">Get a Free Demo ↗</a></li>
+    </ul>
 
   <!-- HERO -->
   <section class="port-hero">
@@ -48,6 +60,7 @@
       <div class="port-filters reveal" id="port-filters">
         <button class="filter-btn active" data-filter="all" id="filter-all">All Projects</button>
         <button class="filter-btn" data-filter="live" id="filter-live">🟢 Live Sites</button>
+        <button class="filter-btn" data-filter="smokeshop" id="filter-smokeshop">Smoke Shops</button>
         <button class="filter-btn" data-filter="construction" id="filter-construction">Construction</button>
         <button class="filter-btn" data-filter="landscaping" id="filter-landscaping">Landscaping</button>
         <button class="filter-btn" data-filter="services" id="filter-services">Services</button>
@@ -86,7 +99,7 @@
         </article>
 
         <!-- 2. Flava Depot — LIVE -->
-        <article class="port-card glass reveal" data-category="services live" id="card-flava">
+        <article class="port-card glass reveal" data-category="services live smokeshop" id="card-flava">
           <div class="port-card-img-wrap">
             <div class="port-img port-img--flava"></div>
             <div class="port-img-overlay">
@@ -270,7 +283,7 @@
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p class="footer-copy">© 2025 Smokeshop Growth. Built for the smoke shop industry.</p>
+      <p class="footer-copy">© 2026 Smokeshop Growth. Built for the smoke shop industry.</p>
       <ul class="footer-links">
         <li><a href="./index.html">Home</a></li>
         <li><a href="./portfolio.html">Portfolio</a></li>

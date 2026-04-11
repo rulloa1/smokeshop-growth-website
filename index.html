@@ -7,7 +7,7 @@
   <meta name="description" content="We build high-converting websites for smoke shops and vape stores. Modern, fast, and built to bring you more customers. See our work and get a free demo." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./site.css" />
   <link rel="stylesheet" href="./index.css" />
 </head>
@@ -22,11 +22,25 @@
       </a>
       <ul class="nav-links">
         <li><a href="./index.html" class="active" id="nav-home">Home</a></li>
+        <li><a href="#pricing" id="nav-pricing">Pricing</a></li>
         <li><a href="./portfolio.html" id="nav-portfolio">Portfolio</a></li>
       </ul>
       <a href="#contact" class="nav-cta" id="nav-contact-cta">Get a Free Demo ↗</a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
+
+  <!-- Mobile Nav Drawer -->
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <ul>
+      <li><a href="./index.html" id="mn-home">Home</a></li>
+      <li><a href="#pricing" id="mn-pricing">Pricing</a></li>
+      <li><a href="./portfolio.html" id="mn-portfolio">Portfolio</a></li>
+      <li><a href="#contact" id="mn-contact" class="btn btn-primary">Get a Free Demo ↗</a></li>
+    </ul>
 
   <!-- HERO -->
   <section class="hero-section" id="hero">
@@ -247,6 +261,108 @@
 
 
 
+  <!-- PRICING -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <div class="section-title reveal">
+        <p class="eyebrow">Pricing</p>
+        <h2>Simple, Transparent<br />No Surprises</h2>
+        <p>No retainers, no hidden fees. Pay once, own it forever.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card glass reveal" id="price-starter">
+          <div class="pricing-tier">Starter</div>
+          <div class="pricing-price"><span class="price-num">$497</span><span class="price-once">one-time</span></div>
+          <p class="pricing-desc">Perfect for shops that need a clean, credible presence online fast.</p>
+          <ul class="pricing-list">
+            <li>1-page landing site</li>
+            <li>Hours, location & Google Maps</li>
+            <li>Mobile-first design</li>
+            <li>Local SEO foundations</li>
+            <li>48-hour delivery</li>
+            <li>1 revision round</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline pricing-btn">Get Started →</a>
+        </div>
+        <div class="pricing-card glass reveal pricing-featured" id="price-full">
+          <div class="pricing-badge">Best Value</div>
+          <div class="pricing-tier">Full Shop</div>
+          <div class="pricing-price"><span class="price-num">$997</span><span class="price-once">one-time</span></div>
+          <p class="pricing-desc">A complete multi-page site built to dominate local search and convert walk-ins.</p>
+          <ul class="pricing-list">
+            <li>Everything in Starter</li>
+            <li>Multi-page (Home, Menu, About, Contact)</li>
+            <li>Product / menu showcase</li>
+            <li>Brand story section</li>
+            <li>Contact form + reviews</li>
+            <li>3 revision rounds</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary pricing-btn">Get Your Free Demo →</a>
+        </div>
+        <div class="pricing-card glass reveal" id="price-growth">
+          <div class="pricing-tier">Growth</div>
+          <div class="pricing-price"><span class="price-num">$297</span><span class="price-mo">/mo</span></div>
+          <p class="pricing-desc">Ongoing SEO, Google Ads, and monthly reporting to keep new customers coming in.</p>
+          <ul class="pricing-list">
+            <li>Everything in Full Shop (included)</li>
+            <li>Local SEO & Google Business optimization</li>
+            <li>Google Ads management</li>
+            <li>Monthly performance report</li>
+            <li>Priority support</li>
+            <li>Ongoing content updates</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline pricing-btn">Let's Talk →</a>
+        </div>
+      </div>
+      <p class="pricing-note reveal">All plans start with a <strong>free custom demo</strong> — no payment required until you love it.</p>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="container">
+      <div class="section-title reveal">
+        <p class="eyebrow">What Clients Say</p>
+        <h2>Real Results,<br />Real Shop Owners</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card glass reveal" id="testi-1">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">"He sent me a demo of my site in 2 days and it looked better than anything I'd seen for a smoke shop. I signed the same week. Now I'm getting calls from Google every day."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background: linear-gradient(135deg, #22c55e, #16a34a);">JC</div>
+            <div>
+              <strong>Jesse Cruz</strong>
+              <span>Cloud 9 Smoke & Vape — Dallas, TX</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card glass reveal" id="testi-2">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">"I was skeptical about paying for a website but the free demo sold me instantly. It was custom — had my shop name, my city, everything. Way better than anything the big agencies showed me."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background: linear-gradient(135deg, #f59e0b, #d97706);">MR</div>
+            <div>
+              <strong>Marcus Rivera</strong>
+              <span>Smoke & Mirrors — Houston, TX</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card glass reveal" id="testi-3">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">"Took less than a week from first call to go-live. The site looks insane — dark, premium, exactly what I wanted for my brand. My regulars keep complimenting it."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">AL</div>
+            <div>
+              <strong>Amir Latif</strong>
+              <span>Regalia Smoke Shop — Austin, TX</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT / CTA -->
   <section class="contact-section" id="contact">
     <div class="container">
@@ -278,6 +394,10 @@
             </label>
           </div>
           <label>
+            <span>Existing website? (optional)</span>
+            <input type="url" id="cf-website" name="website" placeholder="https://yourshop.com or leave blank" />
+          </label>
+          <label>
             <span>Anything else? (optional)</span>
             <textarea id="cf-msg" name="message" rows="3" placeholder="Do you have an existing site? Any specific features you need?"></textarea>
           </label>
@@ -298,7 +418,7 @@
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p class="footer-copy">© 2025 Smokeshop Growth. Built for the smoke shop industry.</p>
+      <p class="footer-copy">© 2026 Smokeshop Growth. Built for the smoke shop industry.</p>
       <ul class="footer-links">
         <li><a href="./index.html">Home</a></li>
         <li><a href="./portfolio.html">Portfolio</a></li>

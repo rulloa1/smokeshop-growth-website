@@ -3,7 +3,7 @@
    Dark mode, emerald-green + amber accent palette
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
   /* Palette */
@@ -42,7 +42,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Outfit', sans-serif;
   background: var(--bg);
   color: var(--text);
   min-height: 100vh;
@@ -55,7 +55,7 @@ img { display: block; max-width: 100%; height: auto; }
 
 /* ── Typography ─────────────────────────────────────────── */
 .eyebrow {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.72rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -64,7 +64,7 @@ img { display: block; max-width: 100%; height: auto; }
 
 h1 { font-family: 'Syne', sans-serif; font-weight: 800; line-height: 1.0; }
 h2 { font-family: 'Syne', sans-serif; font-weight: 700; line-height: 1.08; }
-h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; }
+h3 { font-family: 'Outfit', sans-serif; font-weight: 700; }
 
 /* ── Layout helpers ─────────────────────────────────────── */
 .container {
@@ -164,7 +164,7 @@ h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; }
   gap: 0.5rem;
   padding: 0.9rem 1.8rem;
   border-radius: 999px;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-weight: 700;
   font-size: 0.95rem;
   cursor: pointer;
@@ -308,4 +308,86 @@ h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; }
 /* ── Responsive nav ─────────────────────────────────────── */
 @media (max-width: 640px) {
   .nav-links { display: none; }
+}
+
+/* ── Mobile Hamburger Nav ────────────────────────────────── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem;
+  z-index: 200;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.mobile-nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 150;
+  backdrop-filter: blur(4px);
+}
+
+.mobile-nav-overlay.open { display: block; }
+
+.mobile-nav-drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: min(320px, 85vw);
+  height: 100vh;
+  background: var(--surface);
+  border-left: 1px solid var(--line-strong);
+  z-index: 160;
+  transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 5rem 2rem 2rem;
+}
+
+.mobile-nav-drawer.open { right: 0; }
+
+.mobile-nav-drawer ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mobile-nav-drawer ul a {
+  display: block;
+  padding: 0.9rem 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-2);
+  border-radius: var(--radius-sm);
+  transition: color 0.2s, background 0.2s;
+}
+
+.mobile-nav-drawer ul a:hover { color: var(--text); background: var(--line); }
+
+.mobile-nav-drawer ul .btn {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+@media (max-width: 640px) {
+  .nav-hamburger { display: flex; }
+  .nav-cta { display: none; }
 }
