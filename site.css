@@ -3,7 +3,7 @@
    Dark mode, emerald-green + amber accent palette
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+/* Font loaded in HTML <link> — no @import needed (avoids duplicate request) */
 
 :root {
   /* Palette */
