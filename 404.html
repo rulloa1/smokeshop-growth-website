@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found — Smokeshop Growth</title>
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./site.css" />
+  <style>
+    .four-oh-four {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    .four-oh-four h1 {
+      font-size: clamp(4rem, 12vw, 8rem);
+      background: linear-gradient(135deg, var(--green), #10b981, var(--amber));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+    }
+    .four-oh-four h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .four-oh-four p {
+      color: var(--text-2);
+      margin-bottom: 2rem;
+      max-width: 40ch;
+      margin-inline: auto;
+    }
+    .four-oh-four .actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a href="./index.html" class="nav-logo">
+        <div class="logo-dot"></div>
+        Smokeshop Growth
+      </a>
+      <ul class="nav-links">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./index.html#pricing">Pricing</a></li>
+        <li><a href="./portfolio.html">Portfolio</a></li>
+      </ul>
+      <a href="./index.html#contact" class="nav-cta">Get a Free Demo ↗</a>
+    </div>
+  </nav>
+  <section class="four-oh-four">
+    <div>
+      <h1>404</h1>
+      <h2>Page Not Found</h2>
+      <p>The page you're looking for doesn't exist or has been moved.</p>
+      <div class="actions">
+        <a href="./index.html" class="btn btn-primary">Back to Home</a>
+        <a href="./portfolio.html" class="btn btn-outline">View Portfolio →</a>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
