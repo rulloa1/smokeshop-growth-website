@@ -9,6 +9,10 @@ function extractOutputText(payload) {
     .trim();
 }
 
+function hasValidAccessToken(request, expectedToken) {
+  return Boolean(expectedToken) && request.headers.get('Authorization') === `Bearer ${expectedToken}`;
+}
+
 function buildOpsPrompt(data) {
   return `
 You are an operations agent for a smoke shop outbound sales pipeline.
@@ -54,7 +58,7 @@ Return strict JSON only with this shape:
 Rules:
 - Keep fixes conservative and safe.
 - Never invent phone numbers or overwrite existing contact names.
-- You may create placeholder demo links only when missing, using https://demo.smokeshopgrowth.com/<slug>.
+- Never invent or create demo links. Recommend that the operator attach a verified live demo URL when one is missing.
 - If a callback is stalled, add a follow-up note.
 - Prefer moving a lead from new to ready-to-call only when there is enough context to call.
 - Use the selected lead for coaching when available, otherwise choose the top priority lead.
@@ -65,12 +69,20 @@ Rules:
 export async function onRequestPost({ request, env }) {
   const OPENAI_API_KEY = env.OPENAI_API_KEY || "";
   const OPENAI_MODEL = env.OPENAI_MODEL || "gpt-5.4-mini";
+  const OPS_AGENT_ACCESS_TOKEN = env.OPS_AGENT_ACCESS_TOKEN || "";
 
-  if (!OPENAI_API_KEY) {
+  if (!OPENAI_API_KEY || !OPS_AGENT_ACCESS_TOKEN) {
     return new Response(JSON.stringify({
-      error: "OPENAI_API_KEY is not set securely on Cloudflare.",
+      error: "The server-side operations agent is not enabled.",
       configured: false
-    }), { status: 503, headers: { "Content-Type": "application/json" } });
+    }), { status: 503, headers: { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store" } });
+  }
+
+  if (!hasValidAccessToken(request, OPS_AGENT_ACCESS_TOKEN)) {
+    return new Response(JSON.stringify({ error: "Unauthorized." }), {
+      status: 401,
+      headers: { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store" }
+    });
   }
 
   try {

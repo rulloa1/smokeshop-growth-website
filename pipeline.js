@@ -8,11 +8,11 @@ const sampleLeads = [
     contact: "Mike",
     phone: "(214) 555-0110",
     city: "Dallas, TX",
-    demoUrl: "https://demo.smokeshopgrowth.com/cloud9",
+    demoUrl: "",
     status: "ready-to-call",
     notes: "Strong Google Maps reviews. Could pitch online menu and curbside pickup.",
     createdAt: new Date().toISOString(),
-    history: ["Demo concept prepared. Ready for first call."]
+    history: ["Demo concept is still needed before the first call."]
   },
   {
     id: crypto.randomUUID(),
@@ -212,12 +212,6 @@ function normalizeLead(lead) {
   if (!notes) {
     nextLead.notes = "Guardian note: personalize pitch around stronger online presence, trust, and local walk-in traffic.";
     applied.push(`Added a default pitch note for ${nextLead.name}.`);
-  }
-
-  if (!nextLead.demoUrl && nextLead.status !== "not-interested") {
-    const slug = nextLead.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-    nextLead.demoUrl = `https://demo.smokeshopgrowth.com/${slug || "shop-demo"}`;
-    applied.push(`Generated a placeholder demo link for ${nextLead.name}.`);
   }
 
   if (nextLead.status === "new" && nextLead.demoUrl) {
@@ -553,7 +547,7 @@ async function checkOpsAgentHealth() {
     if (payload.configured) {
       setOpsStatus(`OpenAI ops agent is live via ${payload.model}.`, "live");
     } else {
-      setOpsStatus("OpenAI ops agent is available, but OPENAI_API_KEY is not configured. Using local fallback.", "fallback");
+      setOpsStatus("Private AI access is not enabled for this browser. Using local coaching and safe fixes.", "fallback");
     }
   } catch {
     remoteOpsState = {
